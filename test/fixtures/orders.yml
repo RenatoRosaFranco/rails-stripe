@@ -1,0 +1,29 @@
+# == Schema Information
+#
+# Table name: orders
+#
+#  id             :integer          not null, primary key
+#  amount_cents   :integer
+#  payment_method :integer
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#  customer_id    :integer          not null
+#
+# Indexes
+#
+#  index_orders_on_customer_id  (customer_id)
+#
+# Foreign Keys
+#
+#  customer_id  (customer_id => customers.id)
+#
+
+one:
+  amount_cents: 1
+  payment_method: 1
+  customer: one
+
+two:
+  amount_cents: 1
+  payment_method: 1
+  customer: two
